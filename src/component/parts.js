@@ -161,3 +161,7 @@ export const Amount = styled.div`
     font-size: 0.8rem;
   }
 `
+
+export function Loading() {
+  return <Center>Loading</Center>
+}

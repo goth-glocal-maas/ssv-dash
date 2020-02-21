@@ -20,11 +20,15 @@ export const getUserId = () => {
   return cookie.get("id") || null
 }
 
+export const getUsername = () => {
+  return cookie.get("username") || null
+}
+
 export const login = ({ id, username, token, roles }) => {
   cookie.set("token", token, { expires: 1 })
   cookie.set("id", id, { expires: 1 })
   cookie.set("username", username, { expires: 1 })
-  cookie.set("roles", roles, { expires: 1 })
+  cookie.set("roles", roles.join(","), { expires: 1 })
 }
 
 export const logout = () => {
