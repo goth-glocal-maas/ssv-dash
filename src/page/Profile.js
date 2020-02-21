@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { Link } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import gql from "graphql-tag"
 import { useQuery } from "@apollo/react-hooks"
 import Basic from "../lib/basic"
@@ -28,6 +28,7 @@ const Profile = () => {
     skip: !isLoggedIn
   })
 
+  if (!isLoggedIn) return <Redirect to="/" />
   if (loading) return <Loading />
   const { users } = data
   const user = users[0]

@@ -103,11 +103,13 @@ const BottomBar = () => {
           </Link>
         </BoxItem>
 
-        <BoxItem>
-          <Link to="/me" className="navbar-item">
-            About
-          </Link>
-        </BoxItem>
+        {isLoggedIn && (
+          <BoxItem>
+            <Link to="/me" className="navbar-item">
+              Me
+            </Link>
+          </BoxItem>
+        )}
       </Box>
     </Nav>
   )
