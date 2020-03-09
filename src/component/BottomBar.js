@@ -83,12 +83,6 @@ const BottomBar = () => {
           </Link>
         </BoxItem>
 
-        <BoxItem>
-          <Link to={"/p"} className="navbar-item">
-            เรียนรู้
-          </Link>
-        </BoxItem>
-
         {!isLoggedIn && (
           <BoxItem>
             <Link to={"/login"} className="navbar-item">

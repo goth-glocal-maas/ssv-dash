@@ -1,7 +1,7 @@
 {
-  "name": "batsu",
+  "name": "cth-web",
   "version": "0.1.0",
-  "versionDate": "2020-02-21",
+  "versionDate": "2020-03-09",
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
