@@ -10,7 +10,6 @@ import {
 import Basic from "../lib/basic"
 
 const Nav = styled.nav`
-  height: 2.8rem;
   background-color: ${PRIMARY_COLOR} !important;
   color: #333333 !important;
 
@@ -50,6 +49,8 @@ const BoxItem = styled.div`
     justify-content: center;
     line-height: 2rem;
     text-overflow: hidden;
+    outline: none;
+    z-index: 1;
   }
 
   @media screen and (min-width: 450px) {
@@ -57,6 +58,7 @@ const BoxItem = styled.div`
     a:hover {
       background-color: ${PRIMARY_LIGHT_COLOR} !important;
       color: ${PRIMARY_TEXT_COLOR} !important;
+      z-index: 2;
     }
   }
 `
@@ -67,12 +69,12 @@ const roundRobinUrls = (currentUrl, choices) => {
   return choices[ind + 1]
 }
 
-const BottomBar = () => {
+const NavBar = () => {
   const { isLoggedIn } = Basic.useContainer()
 
   return (
     <Nav
-      className="navbar is-primary is-fixed-bottom"
+      className="navbar is-fixed-top"
       role="navigation"
       aria-label="main navigation"
     >
@@ -109,4 +111,4 @@ const BottomBar = () => {
   )
 }
 
-export default BottomBar
+export default NavBar
