@@ -15,8 +15,8 @@ const MapContainer = styled.div`
 
 export default function Map() {
   const [viewport, setViewport] = useState({
-    latitude: 7.8852323,
-    longitude: 98.3808517,
+    latitude: 13.745993,
+    longitude: 100.578080,
     zoom: 13,
     // transitionInterpolator: new LinearInterpolator({
     //   around: [event.offsetCenter.x, event.offsetCenter.y]
@@ -34,7 +34,9 @@ export default function Map() {
         reuseMaps={true}
         width="100%"
         height="100%"
-        onClick={({ lngLat }) => { console.log(lngLat) }}
+        onClick={({ lngLat }) => {
+          console.log(lngLat)
+        }}
       >
         {/* <SVGOverlay redraw={this._redrawSVGOverlay} />
         <CanvasOverlay redraw={this._redrawCanvasOverlay} />

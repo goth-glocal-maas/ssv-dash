@@ -1,6 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import Map from '../component/Map'
+import React from "react"
+import styled from "styled-components"
+import Map from "../component/Map"
+import QueueList from "../component/QueueList"
 
 const PageBox = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ const PageBox = styled.div`
 `
 
 const SidePane = styled.div`
-  width: 200px;
+  width: 350px;
 `
 
 const MapPane = styled.div`
@@ -18,12 +19,11 @@ const MapPane = styled.div`
 `
 
 export default function Main() {
-
-
   return (
     <PageBox>
       <SidePane>
         <h1>Reservation List</h1>
+        <QueueList />
       </SidePane>
 
       <MapPane>
@@ -31,5 +31,4 @@ export default function Main() {
       </MapPane>
     </PageBox>
   )
-
 }
