@@ -37,7 +37,7 @@ export default function QueueList() {
   return (
     <>
       {items.map(item => (
-        <Item value={item} />
+        <Item key={`q-${item.id}`} value={item} />
       ))}
     </>
   )

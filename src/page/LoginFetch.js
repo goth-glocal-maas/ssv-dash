@@ -3,9 +3,7 @@ import { useForm } from "react-hook-form"
 import { useHistory } from "react-router-dom"
 import fetch from "isomorphic-unfetch"
 import styled from "styled-components"
-import { PROVIDERS } from "../lib/constant"
 import Basic from "../lib/basic"
-import OAuth from "../component/OAuth"
 
 // this is for regular login
 // currently not in use since everyday-passport move toward social login
@@ -21,25 +19,25 @@ const Login = ({ socket }) => {
   const { signin } = basic
   let history = useHistory()
   const [userData, setUserData] = useState({
-    email: "",
+    username: "",
     password: "",
     error: ""
   })
   const { handleSubmit, register, errors } = useForm()
   const onSubmit = async values => {
-    const { email, password } = values
+    const { username, password } = values
     const url = `${process.env.REACT_APP_PASSPORT_URI}/login`
 
     try {
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ username, password })
       })
       if (response.status === 200) {
-        const { id, email, token, roles } = await response.json()
-        // await login({ id, email, token, roles })
-        await signin({ id, email, token, roles })
+        const { id, username, token, roles } = await response.json()
+        // await login({ id, username, token, roles })
+        await signin({ id, username, token, roles })
         history.push("/")
       } else {
         console.error("Login failed.")
@@ -73,16 +71,6 @@ const Login = ({ socket }) => {
 
   return (
     <>
-      <Box className="login-page">
-        {PROVIDERS.map(provider => (
-          <OAuth
-            provider={provider}
-            key={provider}
-            socket={socket}
-            basic={basic}
-          />
-        ))}
-      </Box>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex-card auth-card">
           <div className="tabs-wrapper">
@@ -104,17 +92,13 @@ const Login = ({ socket }) => {
                     type="text"
                     className="input is-medium"
                     placeholder="Enter username"
-                    name="email"
+                    name="username"
                     ref={register({
-                      required: "Required",
-                      pattern: {
-                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                        message: "invalid email address"
-                      }
+                      required: "Required"
                     })}
                   />
                 </div>
-                {errors.email && errors.email.message}
+                {errors.username && errors.username.message}
               </div>
               <div className="field">
                 <label>Password</label>

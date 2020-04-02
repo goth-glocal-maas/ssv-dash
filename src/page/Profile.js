@@ -9,13 +9,10 @@ import { Center, Loading } from "../component/parts"
 import { version, versionDate } from "../../package.json"
 
 const USER_QUERY = gql`
-  query PROFILE_QUERY($id: Int!) {
-    users: auth_user(where: { id: { _eq: $id } }) {
-      first_name
-      last_name
+  query PROFILE_QUERY($id: uuid!) {
+    users: user(where: { id: { _eq: $id } }) {
       username
       email
-      profile_url
       last_login
     }
   }
