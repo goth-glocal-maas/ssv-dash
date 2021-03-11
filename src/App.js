@@ -23,11 +23,11 @@ function App() {
         <Switch>
           <Route
             exact
-            path="/login"
+            path="/dash/login"
             component={() => <LoginFetch />}
           />
-          <Route exact path="/me" component={Profile} />
-          <Route exact path="/" component={Main} />
+          <Route exact path="/dash/me" component={Profile} />
+          <Route exact path="/dash" component={Main} />
           <Route path="*" component={Page404} />
         </Switch>
       </Container>
