@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Helmet>
-        <title>Hailing App</title>
+        <title>SSV DASH</title>
       </Helmet>
 
       <NavBar />

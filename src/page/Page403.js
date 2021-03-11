@@ -7,7 +7,7 @@ import { Center } from "../component/parts"
 const Page403 = () => (
   <Center>
     <Helmet>
-      <title>Hailing: 403 Permission Denied</title>
+      <title>SSV DASH: 403 Permission Denied</title>
     </Helmet>
     <div>
       <FontAwesome name="exclamation" size="4x" color="red" />

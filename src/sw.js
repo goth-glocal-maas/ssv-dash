@@ -5,7 +5,7 @@ workbox.setConfig({
 })
 
 workbox.core.setCacheNameDetails({
-  prefix: "stth",
+  prefix: "ssv-dash",
   suffix: "v1.7.1",
   precache: "install-time",
   runtime: "run-time",
@@ -14,7 +14,7 @@ workbox.core.setCacheNameDetails({
 
 const oldCache = ["v1.7.0"]
 for (let k in oldCache) {
-  caches.delete(`stth-install-time-${oldCache[k]}`).then(function() {})
+  caches.delete(`ssv-dash-install-time-${oldCache[k]}`).then(function() {})
 }
 
 workbox.precaching.precacheAndRoute([])

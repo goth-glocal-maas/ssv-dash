@@ -7,7 +7,7 @@ import { Center } from "../component/parts"
 const Page404 = () => (
   <Center>
     <Helmet>
-      <title>Hailing: 404 Not found</title>
+      <title>SSV DASH: 404 Not found</title>
     </Helmet>
     <div>
       <FontAwesome name="search" size="4x" color="red" />
