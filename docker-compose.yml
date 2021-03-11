@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  react-prod:
+    container_name: ssv-dash
+    build:
+      # the context (working directory) is the current directory
+      # change this to the directory containing the dockerfile if in a different place
+      context: .
+      dockerfile: # the dockerfile to be run
+        Dockerfile
+    expose:
+      - 80
