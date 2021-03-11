@@ -13,7 +13,7 @@ const Page404 = () => (
       <FontAwesome name="search" size="4x" color="red" />
     </div>
     <p>ไม่พบข้อมูล</p>
-    <Link className="button is-text is-large" to="/">
+    <Link className="button is-text is-large" to="/dash/">
       กลับไปหน้าแรก
     </Link>
   </Center>

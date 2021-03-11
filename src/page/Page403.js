@@ -13,7 +13,7 @@ const Page403 = () => (
       <FontAwesome name="exclamation" size="4x" color="red" />
     </div>
     <p>คุณไม่มีสิทธิในการเข้าใช้บริการในส่วนนี้ โปรดติดต่อผู้ดูแลระบบ</p>
-    <Link className="button is-text is-large" to="/">
+    <Link className="button is-text is-large" to="/dash/">
       กลับไปหน้าแรก
     </Link>
   </Center>

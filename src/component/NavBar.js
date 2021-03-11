@@ -80,28 +80,28 @@ const NavBar = () => {
     >
       <Box>
         <BoxItem>
-          <Link to={"/"} className="navbar-item">
+          <Link to={"/dash/"} className="navbar-item">
             <FontAwesome name={"home"} />
           </Link>
         </BoxItem>
 
         {!isLoggedIn && (
           <BoxItem>
-            <Link to={"/login"} className="navbar-item">
+            <Link to={"/dash/login"} className="navbar-item">
               Login
             </Link>
           </BoxItem>
         )}
 
         <BoxItem>
-          <Link to="/search" className="navbar-item">
+          <Link to="/dash/search" className="navbar-item">
             <FontAwesome name="search" />
           </Link>
         </BoxItem>
 
         {isLoggedIn && (
           <BoxItem>
-            <Link to="/me" className="navbar-item">
+            <Link to="/dash/me" className="navbar-item">
               Me
             </Link>
           </BoxItem>

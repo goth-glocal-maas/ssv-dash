@@ -25,7 +25,7 @@ const Profile = () => {
     skip: !isLoggedIn
   })
 
-  if (!isLoggedIn) return <Redirect to="/" />
+  if (!isLoggedIn) return <Redirect to="/dash/" />
   if (loading) return <Loading />
   const { users } = data
   const user = users[0]

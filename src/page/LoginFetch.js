@@ -27,9 +27,9 @@ const Login = ({ socket }) => {
   const onSubmit = async values => {
     const { username, password } = values
     const url = `${process.env.REACT_APP_PASSPORT_URI}/login`
-
+    let response = null
     try {
-      const response = await fetch(url, {
+      response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
@@ -38,7 +38,7 @@ const Login = ({ socket }) => {
         const { id, username, token, roles } = await response.json()
         // await login({ id, username, token, roles })
         await signin({ id, username, token, roles })
-        history.push("/")
+        history.push("/dash/")
       } else {
         console.error("Login failed.")
         // https://github.com/developit/unfetch#caveats
@@ -58,9 +58,6 @@ const Login = ({ socket }) => {
         "You have an error in your code or there are Network issues.",
         error
       ) */
-      const { response } = error
-      console.log(error)
-      console.log(response)
       setUserData(
         Object.assign({}, userData, {
           error: response ? response.statusText : error.message
