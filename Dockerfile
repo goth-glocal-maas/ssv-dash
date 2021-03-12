@@ -14,7 +14,8 @@ RUN npm run postbuild
 # the base image for this is an alpine based nginx image
 FROM nginx:alpine
 # copy the build folder from react to the root of nginx (www)
-COPY --from=build /app/build /usr/share/nginx/html
+RUN mkdir /www
+COPY --from=build /app/build /www
 # --------- only for those using react router ----------
 # if you are using react router
 # you need to overwrite the default nginx configurations
